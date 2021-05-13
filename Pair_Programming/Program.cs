@@ -33,6 +33,8 @@ namespace Pair_Programming
         bool hasPlate = false;
         bool hasButterKnife = false;
         bool hasMug = false;
+        bool hasMask = false;
+        bool hasLightsaber = false;
 
         public void Intro()
         {
@@ -167,27 +169,57 @@ namespace Pair_Programming
         {
             Console.Clear();
             RoomFour fourthRoom = new RoomFour();
-            while (roomFour)
+            if (hasMask == true)
             {
-                Console.WriteLine(fourthRoom.RoomDescription);
-                Console.WriteLine("1. Stay.\n" +
-                "2. Leave");
-
-                string input = Console.ReadLine();
-
-                switch (input)
+                while (roomFour)
                 {
-                    case "1":
-                        //Poisoned();
-                        break;
-                    case "2":
-                        roomFour = false;
-                        roomTwo = true;
-                        NavRoomTwo();
-                        break;
-                    default:
-                        Console.WriteLine("Not a valid input");
-                        break;
+                    Console.WriteLine("Once you enter the room you put on your mask.\n" +
+                        "You can now explore the room\n" +
+                        " \n" +
+                        "1. search room\n" +
+                        "2. Go back");
+                    string input = Console.ReadLine();
+
+                    switch (input)
+                    {
+                        case "1":
+                            findingLightsaber();
+                            break;
+                        case "2":
+                            roomFour = false;
+                            roomTwo = true;
+                            NavRoomTwo();
+                            break;
+                        default:
+                            Console.WriteLine("Not a valid input");
+                            break;
+                    }
+                }
+            }
+            else
+            {
+                while (roomFour)
+                {
+                    Console.WriteLine(fourthRoom.RoomDescription);
+                    Console.WriteLine("1. Stay.\n" +
+                    "2. Leave");
+
+                    string input = Console.ReadLine();
+
+                    switch (input)
+                    {
+                        case "1":
+                            //Poisoned();
+                            break;
+                        case "2":
+                            roomFour = false;
+                            roomTwo = true;
+                            NavRoomTwo();
+                            break;
+                        default:
+                            Console.WriteLine("Not a valid input");
+                            break;
+                    }
                 }
             }
         }
@@ -207,7 +239,7 @@ namespace Pair_Programming
                 switch (input)
                 {
                     case "1":
-                        //BattleSequence();
+                        BattleSequence();
                         break;
                     case "2":
                         roomFive = false;
@@ -236,7 +268,7 @@ namespace Pair_Programming
                 switch (input)
                 {
                     case "1":
-                        //Fountain();
+                        Fountain();
                         break;
                     case "2":
                         roomSix = false;
@@ -250,8 +282,74 @@ namespace Pair_Programming
             }
         }
 
+        public void Fountain()
+        {
+            if (hasMug == true)
+            {
+                //player health is replenished and gains defense bonus
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Refreshing.\n" +
+                    "\n" +
+                    "Press any key to continue..");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+
+        public void BattleSequence()
+        {
+
+        }
+
+        public void findingLightsaber()
+        {
+            Console.Clear();
+            Console.WriteLine("You notice a brightly glowing stick on the floor.\n" +
+                "You notice it cut whatever surface it was originally laying on cleanly in half..\n" +
+                "...\n" +
+                "is..is that a lightsaber?!\n" +
+                "\n" +
+                "Take the lightsaber? (y/n)");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "y":
+                    Console.Clear();
+                    hasLightsaber = true;
+                    Console.WriteLine("Hell yeah, you got a lightsaber!**woosh woosh**\n" +
+                        " \n" +
+                        "Press any key to continue..");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                case "n":
+                    Console.Clear();
+                    Console.WriteLine("...\n" +
+                        "...\n" +
+                        "...\n" +
+                        "Seriously?..\n" +
+                        "Okay then.\n" +
+                        "\n" +
+                        "Press any key to continue");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid input");
+                    break;
+            }
+            
+        }
+
+
+
         //RoomSearchOptions
-        public void roomOneSearch() 
+        public void roomOneSearch()
         {
             Console.Clear();
             Console.WriteLine("You don't really find anything of interest\n" +
@@ -284,7 +382,7 @@ namespace Pair_Programming
             Console.Clear();
         }
 
-        public void roomTwoSearch() 
+        public void roomTwoSearch()
         {
             Console.Clear();
             Console.WriteLine("You see an open journal sitting on the desk, \n" +
@@ -329,7 +427,7 @@ namespace Pair_Programming
             }
         }
 
-        public void roomThreeSearch() 
+        public void roomThreeSearch()
         {
             Console.Clear();
             Console.WriteLine("You see a bunch of dishes and utensils on the table.\n" +
@@ -388,8 +486,6 @@ namespace Pair_Programming
             }
         }
 
-        public void roomFiveSearch() { }
-        public void roomSixSearch() { }
 
 
 
@@ -408,7 +504,7 @@ namespace Pair_Programming
                     " \n" +
                     "Press any key to continue.");
                 Console.ReadKey();
-                NavRoomOne();
+                Intro();
             }
         }
 
