@@ -607,12 +607,16 @@ namespace Pair_Programming
                         "Press any key to continue.. (you will be directed back to the previous room)");
                     hasKey = true;
                     Console.Clear();
+                    roomFive = false;
+                    roomThree = true;
                     NavRoomThree();
                     break;
                 case "n":
                     Console.Clear();
                     Console.WriteLine("Okay.. well, good luck with doing all of that again");
                     Console.ReadKey();
+                    roomFive = false;
+                    roomThree = true;
                     NavRoomThree();
                     break;
                 default:
@@ -641,7 +645,14 @@ namespace Pair_Programming
             if (hasBroom == false && hasSword == false && hasLightsaber == false)
             {
                 Console.WriteLine("Uh, you dont have a weapon...\n" +
-                    "Good luck.");
+                    "Lucky for you we're being flexible here.\n" +
+                    "We're just gonna throw you back into the previous room\n" +
+                    "so you can better prepare.. \n" +
+                    "*cough* find a weapon *cough*");
+                Console.ReadKey();
+                roomFive = false;
+                roomThree = true;
+                NavRoomThree();
             }
 
             string input = Console.ReadLine();
