@@ -39,7 +39,7 @@ namespace Pair_Programming
 
         public void Intro()
         {
-            Console.WriteLine("insert game name here\n" +
+            Console.WriteLine("Basic Dungeon Explorer\n" +
                 "\n" +
                 "Press any key to begin");
 
