@@ -685,7 +685,6 @@ namespace Pair_Programming
         }
 
 
-
         public void Exit()
         {
             Console.Clear();
@@ -694,8 +693,8 @@ namespace Pair_Programming
                 Console.Clear();
                 Console.WriteLine("You managed to escape the dungeon!\n" +
                     "...What took you so long?");
-                Console.Clear();
                 Console.ReadKey();
+                Console.Clear();
                 Intro();
             }
             else
