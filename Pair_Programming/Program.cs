@@ -671,6 +671,7 @@ namespace Pair_Programming
         }
 
 
+
         public void Exit()
         {
             Console.Clear();
@@ -694,8 +695,5 @@ namespace Pair_Programming
             }
         }
 
-
-
     }
 }
-
