@@ -578,7 +578,8 @@ namespace Pair_Programming
         //    {
         //        if(boss.Health <= 0)
         //        {
-
+                    //spent forever trying to figure this out. and we couldn't so we had some backup text just in case
+                    //if we continue with this project we'd love some feedback on how to connect that
 
         //        }
         //        else
