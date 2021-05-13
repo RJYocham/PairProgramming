@@ -34,6 +34,7 @@ namespace Pair_Programming
         bool hasButterKnife = false;
         bool hasMug = false;
         bool hasMask = false;
+        bool hasSword = false;
         bool hasLightsaber = false;
 
         public void Intro()
@@ -261,7 +262,8 @@ namespace Pair_Programming
             {
                 Console.WriteLine(sixthRoom.RoomDescription);
                 Console.WriteLine("1. Approach fountain\n" +
-                "2. Go back");
+                    "2. Search room\n" +
+                    "3. Go back");
 
                 string input = Console.ReadLine();
 
@@ -271,6 +273,9 @@ namespace Pair_Programming
                         Fountain();
                         break;
                     case "2":
+                        roomSixSearch();
+                        break;
+                    case "3":
                         roomSix = false;
                         roomThree = true;
                         NavRoomThree();
@@ -282,6 +287,8 @@ namespace Pair_Programming
             }
         }
 
+
+        //other needed methods
         public void Fountain()
         {
             if (hasMug == true)
@@ -297,11 +304,6 @@ namespace Pair_Programming
                 Console.ReadKey();
                 Console.Clear();
             }
-        }
-
-        public void BattleSequence()
-        {
-
         }
 
         public void findingLightsaber()
@@ -343,8 +345,41 @@ namespace Pair_Programming
                     Console.WriteLine("Not a valid input");
                     break;
             }
-            
+
         }
+
+        public void rustySword()
+        {
+            Console.Clear();
+            Console.WriteLine("There's a large flimsy crest on the wall. Behind it are two crossed swords.\n" +
+                "They look real. One is broken, and the other is pretty rusty.\n" +
+                "\n" +
+                "Take the rusty sword? (y/n)");
+
+            string input = Console.ReadLine();
+
+            switch (input)
+            {
+                case "y":
+                    Console.Clear();
+                    hasSword = true;
+                    Console.WriteLine("You now have a Sword!");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                case "n":
+                    Console.Clear();
+                    Console.WriteLine("You decide not to take it. It looks too heavy anyway.");
+                    Console.ReadKey();
+                    Console.Clear();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid input");
+                    break;
+            }
+
+        }
+    
 
 
 
@@ -387,11 +422,13 @@ namespace Pair_Programming
             Console.Clear();
             Console.WriteLine("You see an open journal sitting on the desk, \n" +
                 "and a faded sign on the door at the end of room.\n" +
+                "There's also some cool decor hanging on the wall.\n" +
                 "\n" +
                 "Which would you like to look at?\n" +
                 "1. Journal\n" +
                 "2. Sign\n" +
-                "3. Neither\n" +
+                "3. Decor\n" +
+                "4. Nothing\n" +
                 " ");
 
             string roomTwoInput = Console.ReadLine();
@@ -419,6 +456,10 @@ namespace Pair_Programming
                     Console.Clear();
                     break;
                 case "3":
+                    rustySword();
+                    Console.Clear();
+                    break;
+                case "4":
                     NavRoomTwo();
                     break;
                 default:
@@ -486,8 +527,81 @@ namespace Pair_Programming
             }
         }
 
+        public void roomSixSearch()
+        {
+            Console.Clear();
+            Console.WriteLine("You notice something on the ground near the edge of the fountain.\n" +
+                "When you pick it up, it feels kind of heavy, and looks like its used as a face covering.\n" +
+                "Maybe it can protect you from strong fumes?\n" +
+                "\n" +
+                "Take the mask? (y/n)");
+
+            string yninput = Console.ReadLine();
+
+            switch (yninput.ToLower())
+            {
+                case "y":
+                    Console.WriteLine("You take the mask.\n" +
+                        "\n" +
+                        "Press any key to continue.");
+                    hasMask = true;
+                    Console.ReadKey();
+                    break;
+                case "n":
+                    Console.WriteLine("You leave the mask. You don't think you'll need it.\n" +
+                        " \n" +
+                        "Press any key to continue.");
+                    Console.ReadKey();
+                    break;
+                default:
+                    Console.WriteLine("Not a valid input");
+                    break;
+            }
+            Console.Clear();
+        }
 
 
+
+        public void BattleSequence()
+        {
+            Console.Clear();
+            Console.WriteLine("What would you like to use as your weapon?");
+            if (hasBroom == true)
+            {
+                Console.WriteLine("Broom");
+            }
+            if (hasSword == true)
+            {
+                Console.WriteLine("Rusty Sword");
+            }
+            if (hasLightsaber == true)
+            {
+                Console.WriteLine("Lightsaber");
+            }
+            if (hasBroom ==false && hasSword==false && hasLightsaber==false)
+            {
+                Console.WriteLine("Uh, you dont have a weapon...\n" +
+                    "Good luck.");
+            }
+
+            string input = Console.ReadLine();
+
+            switch (input.ToLower())
+            {
+                case "broom":
+
+                    break;
+                case "sword":
+
+                    break;
+                case "lightsaber":
+
+                    break;
+                default:
+
+                    break;
+            }
+        }
 
 
         public void Exit()
