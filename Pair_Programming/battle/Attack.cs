@@ -7,7 +7,7 @@ namespace Pair_Programming
 {
     public class Attack
     {
-        public enum DamageType { Bludgeoning, Slashing, Piercing, Poison, Fire, Water, Ice, Shocking, Magic };
+        public enum DamageType { Bludgeoning, Slashing, Piercing, Poison, Fire, Water, Ice, Shocking, Magic, Sword };
         public int Damage;
         public DamageType type;
         public Attack(int damage, DamageType type)
@@ -30,7 +30,6 @@ namespace Pair_Programming
             Type = type;
             Damage = rand.Next(minDamage, maxDamage + 1);
         }
-
 
     }
 }
