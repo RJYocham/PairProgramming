@@ -11,8 +11,6 @@ namespace Pair_Programming.Rooms
         string RoomName { get; }
 
         string RoomDescription { get; }
-
-
     }
 
 }
