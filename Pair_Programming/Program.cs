@@ -99,7 +99,7 @@ namespace Pair_Programming
                 Console.WriteLine(secondRoom.RoomDescription);
                 Console.WriteLine("1. Go to door.\n" +
                 "2. search room \n" +
-                "3. Go back to entrance.");
+                "3. Go back to previous room.");
 
                 string input = Console.ReadLine();
 
@@ -550,6 +550,7 @@ namespace Pair_Programming
             switch (yninput.ToLower())
             {
                 case "y":
+                    Console.Clear();
                     Console.WriteLine("You take the mask.\n" +
                         "\n" +
                         "Press any key to continue.");
@@ -557,6 +558,7 @@ namespace Pair_Programming
                     Console.ReadKey();
                     break;
                 case "n":
+                    Console.Clear();
                     Console.WriteLine("You leave the mask. You don't think you'll need it.\n" +
                         " \n" +
                         "Press any key to continue.");
